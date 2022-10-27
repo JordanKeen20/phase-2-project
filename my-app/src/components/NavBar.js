@@ -2,28 +2,19 @@ import React from "react";
 import SpecialAid from "./SpecialAid";
 import CreateChore from "./CreateChore";
 
-
-function NavBar() {
-    const NavBarStyle = {
-        backgroundColor: "darkblue",
-        color: "white"
-    }
+function NavBar({ setPageChange }){
+  function handleLinkClick(e){
+    e.preventDefault()
+    setPageChange(e.target.pathname)
+  }
 
   return (
     <>
     <nav className = 'navbar'>
-        <a href="/special-aid" className="special-aid">Special Aid</a>
-        <ul>
-            <li>
-                <a href="/createList">Create List</a>
-            </li>
-            <li>
-                <a href="/examplelist">Example List</a>
-            </li>
-            <li>
-                <a href="/randomlist">IDK list</a>
-            </li>
-        </ul>
+            <a onClick={handleLinkClick} href="/specialaid">Special Aid</a>
+            <a onClick={handleLinkClick} href="/createlist">Create List</a>
+            <a onClick={handleLinkClick} href="/examplelist">Example List</a>
+            <a onClick={handleLinkClick} href="/idklist">IDK list</a>
     </nav>
     <div>
     <SpecialAid />

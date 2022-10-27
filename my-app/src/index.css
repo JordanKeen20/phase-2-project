@@ -43,12 +43,12 @@ body {
 
 }
 
-.navbar li.active {
+.navbar a:active {
   background-color: lightblue;
 }
 
 
-.navbar li:hover {
+.navbar a:hover {
   background-color: lightgreen;
 }
 
