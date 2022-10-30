@@ -15,7 +15,7 @@ function App() {
     <>
       <NavBar setPageChange = {setPage}/>
         <Switch>
-          <Route exact path = "/specialaid">
+          <Route exact path = "/home">
             <SpecialAid />
           </Route>
           <Route exact path= "/createlist">

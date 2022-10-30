@@ -2,7 +2,7 @@ import React from "react";
 
 function CreateChore() {
   return (
-    <h1> CreateChore created </h1>
+    <h1> CreateChore  </h1>
   );
 }
 

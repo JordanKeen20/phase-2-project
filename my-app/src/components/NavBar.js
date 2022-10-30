@@ -1,27 +1,15 @@
 import React from "react";
-import SpecialAid from "./SpecialAid";
-import CreateChore from "./CreateChore";
+import { NavLink } from "react-router-dom";
 
-function NavBar({ setPageChange }){
-  function handleLinkClick(e){
-    e.preventDefault()
-    setPageChange(e.target.pathname)
-  }
-
+function NavBar(){
   return (
-    <>
     <nav className = 'navbar'>
-            <a onClick={handleLinkClick} href="/specialaid">Special Aid</a>
-            <a onClick={handleLinkClick} href="/createlist">Create List</a>
-            <a onClick={handleLinkClick} href="/examplelist">Example List</a>
-            <a onClick={handleLinkClick} href="/idklist">IDK list</a>
+            <NavLink to ="/home">Special Aid</NavLink>
+            <NavLink to ="/createlist">Create List</NavLink>
+            <NavLink to ="/examplelist">Example List</NavLink>
+            <NavLink to ="/idklist">IDK list</NavLink>
     </nav>
-    <div>
-    <SpecialAid />
-    <CreateChore />
     
-    </div>
-    </>
   );
 }
 
