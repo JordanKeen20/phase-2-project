@@ -5,11 +5,34 @@ import CreateList from "./CreateChore";
 import ExampleList from "./ExampleList";
 import IdkList from "./idklist";
 import SpecialAid from "./SpecialAid";
+import { toHaveDescription } from "@testing-library/jest-dom/dist/matchers";
 
 
 function App() {
 
-  const [page, setPage] = useState('/')
+  const [page, setPage] = useState('/');
+  const [list, setList] = useState([]);
+  
+
+  function addChore(newChore){
+    const updatedChores = [...list, newChore]
+    setList(updatedChores)
+  }
+
+  function deleteChores(id){
+    const updatedChores = list.filter(list => list.id !== id)
+    setList(updatedChores)
+  }
+
+  function updatedChores(id, completed) {
+    const updatedChores = list.map(list =>{
+      if(list.id === id){
+        return {...list, completed }
+      } else {
+        return list
+      }
+    })
+  }
 
   return (
     <>
@@ -19,10 +42,10 @@ function App() {
             <SpecialAid />
           </Route>
           <Route exact path= "/createlist">
-            <CreateList />
+            <CreateList addChore = {addChore} />
           </Route>
           <Route exact path = "/examplelist">
-            <ExampleList />
+            <ExampleList list = {list}/>
           </Route>
           <Route exact path = "/idklist">
             <IdkList />

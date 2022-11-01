@@ -1,6 +1,6 @@
 import React from "react";
 
-function CreateChore() {
+function CreateChore({addChore}) {
   return (
     <h1> CreateChore  </h1>
   );
