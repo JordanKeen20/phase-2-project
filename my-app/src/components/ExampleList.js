@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from "react";
+import CreateList from "./NewChores";
 
 
-function ExampleList({list}) {
+function ExampleList({list, deleteChores, updatedChores}) {
+
+  const [chores, setChores] = useState ('')
  
 
   useEffect(() => {
     fetch(`http://localhost:4000/chores`)
       .then((r) => r.json())
-      .then(data => setList(data.chores) )
+      .then(data => setChores(data) )
   }, [])
 
   if (!list) return <h2> Wait one moment please! </h2>
 
 
   return (
-    <section>
-      <div className="card">
-        <h1>{name}</h1>
-        <p>{time}</p>
-        <img src={image} alt ="chore"/>
-      </div>
-    </section>
+    <div>
+      <h2> Chore List </h2>
+      <ul>
+        {list.map((list) => (
+          <CreateList 
+          key = {list.id} 
+          list ={list} 
+          deleteChores = {deleteChores} 
+          updatedChores ={updatedChores}
+          />
+        ))}
+      </ul>
+    </div>
   );
 }
 

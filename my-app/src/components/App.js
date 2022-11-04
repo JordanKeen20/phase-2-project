@@ -1,11 +1,11 @@
 import React, { useState }from "react";
 import { Switch, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
-import CreateList from "./CreateChore";
+import CreateList from "./NewChores";
 import ExampleList from "./ExampleList";
 import IdkList from "./idklist";
 import SpecialAid from "./SpecialAid";
-import { toHaveDescription } from "@testing-library/jest-dom/dist/matchers";
+
 
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
             <CreateList addChore = {addChore} />
           </Route>
           <Route exact path = "/examplelist">
-            <ExampleList list = {list}/>
+            <ExampleList list = {list} deleteChores ={deleteChores} updatedChores = {updatedChores}/>
           </Route>
           <Route exact path = "/idklist">
             <IdkList />
