@@ -1,9 +1,9 @@
-import React, { useState }from "react";
+import React, { useEffect, useState }from "react";
 import { Switch, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
 import CreateList from "./NewChores";
 import ExampleList from "./ExampleList";
-import IdkList from "./idklist";
+import AboutProject from "./AboutProject";
 import SpecialAid from "./SpecialAid";
 
 
@@ -12,6 +12,12 @@ function App() {
 
   const [page, setPage] = useState('/');
   const [list, setList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:4000/chores')
+      .then(response => response.json())
+      .then(data => list(data))
+  }, [])
   
 
   function addChore(newChore){
@@ -47,8 +53,8 @@ function App() {
           <Route exact path = "/examplelist">
             <ExampleList list = {list} deleteChores ={deleteChores} updatedChores = {updatedChores}/>
           </Route>
-          <Route exact path = "/idklist">
-            <IdkList />
+          <Route exact path = "/AboutProject">
+            <AboutProject />
           </Route>
         </Switch>
     </>

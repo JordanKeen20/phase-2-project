@@ -10,7 +10,7 @@ function ExampleList({list, deleteChores, updatedChores}) {
   useEffect(() => {
     fetch(`http://localhost:4000/chores`)
       .then((r) => r.json())
-      .then(data => setChores(data) )
+      .then(data => setChores(data.list) )
   }, [])
 
   if (!list) return <h2> Wait one moment please! </h2>
