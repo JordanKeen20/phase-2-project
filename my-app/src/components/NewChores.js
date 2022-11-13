@@ -8,7 +8,24 @@ function CreateChore({addChore}) {
 
   function handleSubmit(e){
     e.preventDefault()
-  }
+    console.log(information)
+    // const choreObj = {
+    //   chores:{
+    //     information: name,
+    //     completed: false
+    //   }
+    }
+
+  //   fetch('http://localhost:4000/chores', {
+  //     method: 'POST',
+  //     headers: {
+  //       "Content-Type" : "application/json"
+  //     },
+  //       body: JSON.stringify(choreObj)
+  //   })
+  //     .then(r = r.json())
+  //     .then(data => addChore(data.list) )
+  // }
   return (
     <form onSubmit={handleSubmit}>
       <h2>New Chore</h2>
