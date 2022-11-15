@@ -32,14 +32,16 @@ function CreateChore() {
     <section id='form'>
       <h3> Add new Chore to list </h3>
       <form onSubmit={handleSubmittion}>
-        <label htmlFor="name">Chore Name: </label>
+        <label htmlFor="name"><h2> Chore Name: </h2></label>
         <input type= 'text' id= 'name' value={name} onChange={e => setname(e.target.value)}/>
 
-        <label htmlFor="image"> Picture: </label>
+        <label htmlFor="image"><h2> Picture URL: </h2></label>
         <input id="image" value={image} onChange={e => setimage(e.target.value)}/>
 
-        <label htmlFor="time"> Time completed: </label>
+        <label htmlFor="time"><h2> Time completed: </h2></label>
         <input id="time" value={time} onChange={e => settime(e.target.value)}/>
+
+        <button type="submit"> Create </button>
       </form>
     </section>
   )
