@@ -4,30 +4,31 @@ import CreateList from "./NewChores";
 
 function ExampleList({list, deleteChores, updatedChores}) {
 
-  const [chores, setChores] = useState ('')
+  const [chores, setChores] = useState (null)
  
 
   useEffect(() => {
     fetch(`http://localhost:4000/chores`)
       .then((r) => r.json())
-      .then(data => setChores(data.list) )
+      .then(data => {
+        setChores(data)
+      })
   }, [])
 
-  if (!list) return <h2> Wait one moment please! </h2>
+  if (!chores) return <h2> Wait one moment please! </h2>
 
 
   return (
     <div>
       <h2> Chore List </h2>
       <ul>
-        {list.map((list) => (
-          <CreateList 
+        {<CreateList 
           key = {list.id} 
           list ={list} 
           deleteChores = {deleteChores} 
           updatedChores ={updatedChores}
           />
-        ))}
+        }
       </ul>
     </div>
   );
