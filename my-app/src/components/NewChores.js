@@ -1,64 +1,48 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-function CreateChore({addChore}) {
-  const [information, setinformation] = useState("")
-  const [time, settime] = useState("")
+
+function CreateChore() {
+  const [name, setname] = useState("")
   const [image, setimage] = useState("")
+  const [time, settime] = useState("")
+  
 
+  const history = useHistory();
 
-  function handleSubmit(e){
+  function handleSubmittion(e) {
     e.preventDefault()
-    console.log(information)
-    // const choreObj = {
-    //   chores:{
-    //     information: name,
-    //     completed: false
-    //   }
+    const infoData = {
+      chore: { name, image, time }
     }
+    fetch("http://localhost:4000/chores", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(infoData)
+    })
+      .then(response => response.json())
+      .then(data =>{
+        history.push(`http://localhost:4000/chores/${data.chores.id}`)
+      })
+  }
 
-  //   fetch('http://localhost:4000/chores', {
-  //     method: 'POST',
-  //     headers: {
-  //       "Content-Type" : "application/json"
-  //     },
-  //       body: JSON.stringify(choreObj)
-  //   })
-  //     .then(r = r.json())
-  //     .then(data => addChore(data.list) )
-  // }
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>New Chore</h2>
-      <label> Chore </label>
-      <div>
-      <input
-        type= 'text'
-        id = 'information'
-        value = {information}
-        onChange = {(e) => setinformation(e.target.value)}
-        />
-      </div>
-      <label> image </label>
-      <div>
-        <input
-        type= 'text'
-        id = 'image-information'
-        value = {image}
-        onChange = {(e) => setimage(e.target.value)}
-        />
-      </div>
-      <label> Time </label>
-      <div>
-        <input
-        type= 'text'
-        id = 'time-information'
-        value = {time}
-        onChange = {(e) => settime(e.target.value)}
-        />
-      </div>
-        <button type="submit"> Add Chore </button>
-    </form>
-  );
+    <section id='form'>
+      <h3> Add new Chore to list </h3>
+      <form onSubmit={handleSubmittion}>
+        <label htmlFor="name">Chore Name: </label>
+        <input type= 'text' id= 'name' value={name} onChange={e => setname(e.target.value)}/>
+
+        <label htmlFor="image"> Picture: </label>
+        <input id="image" value={image} onChange={e => setimage(e.target.value)}/>
+
+        <label htmlFor="time"> Time completed: </label>
+        <input id="time" value={time} onChange={e => settime(e.target.value)}/>
+      </form>
+    </section>
+  )
 }
 
 export default CreateChore;
