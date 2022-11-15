@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
 import CreateList from "./NewChores";
 import ExampleList from "./ExampleList";
-import AboutProject from "./AboutProject";
+import AboutProject from "./AboutHelp";
 import SpecialAid from "./SpecialAid";
 
 
