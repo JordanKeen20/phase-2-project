@@ -90,3 +90,8 @@ form button {
   border: none;
   margin-top: 1rem;
 }
+
+#information a {
+  display: block;
+  margin: 1rem;
+}

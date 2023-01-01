@@ -9,14 +9,14 @@ function ChoreDetails(){
     useEffect(() => {
         fetch(`http://localhost:4000/chores/${id}`)
         .then(response => response.json())
-        .then(data => setChoreList(data.chores))
+        .then(chores => console(chores))
     }, [id])
 
     if (!choreList) return <h2> wait one moment please...</h2>
 
     const { name, image, time } = choreList
 
-    
+
 
     return(
         <section>

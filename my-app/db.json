@@ -4,15 +4,25 @@
       "id": 1,
       "name": "Wake Up",
       "image": "https://us.123rf.com/450wm/mickallnice/mickallnice1811/mickallnice181100005/112713276-kid-wake-up-in-the-morning-vector-and-illustration-.jpg?ver=6",
-      "time": "08:00",
-      "completed" : false
+      "time": "08:00 am",
+      "completed": false
     },
     {
       "id": 2,
       "name": "Make The Bed",
       "image": "https://thumbs.dreamstime.com/z/vector-illustration-cartoon-little-girl-making-bed-kids-doing-housework-chores-home-concept-201041342.jpg",
-      "time": "08:15",
-      "completed" : false
+      "time": "08:15 am",
+      "completed": false
+    },
+    {
+      "list": {
+        "name": "Wash Dishes",
+        "image": "https://www.thespruce.com/thmb/Y9l-tMW1uPAf7BFBglJxxd_PSxw=/2516x2516/smart/filters:no_upscale()/easy-washing-dishes-4174811-hero-617c4e3694d1417b82b2eaaf2db70f5b.jpg",
+        "time": [
+          1
+        ]
+      },
+      "id": 3
     }
   ]
 }
