@@ -95,3 +95,9 @@ form button {
   display: block;
   margin: 1rem;
 }
+
+.chore-items {
+  background-color: white;
+  padding: 2rem;
+  margin: 1rem;
+}

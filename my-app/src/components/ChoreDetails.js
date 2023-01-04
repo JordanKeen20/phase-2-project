@@ -9,24 +9,26 @@ function ChoreDetails(){
     useEffect(() => {
         fetch(`http://localhost:4000/chores/${id}`)
         .then(response => response.json())
-        .then(chores => console(chores))
+        .then(data => setChoreList(data.chores))
     }, [id])
 
     if (!choreList) return <h2> wait one moment please...</h2>
 
     const { name, image, time } = choreList
 
-
+    const timeListings = time.map((times) => (
+        <span key={times}>{times}</span>
+    ));
 
     return(
         <section>
             <div className="chore-items">
                 <h1>{name}</h1>
                 <img src= {image} alt="chore picture"/>
-                <div className="time">{time}</div>
+                <div className="time">{timeListings}</div>
             </div>
         </section>
-    )
+    );
 }
 
 

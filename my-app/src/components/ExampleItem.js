@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 
-function ExampleItem({ name, image, time }) {
+
+function ExampleItem({ name, choreImages, time }) {
+  const timeList = time.map((times) => (
+    <span key={times}>{times}</span>
+  ));
 
  return(
   <div className="chore-items">
     <h1>{name}</h1>
-    <img src={image} alt= "chore picture"/>
+    <img src={choreImages} alt= "chore"/>
     <p>{time}</p>
+    <div className="timings">{timeList}</div>
   </div>
  )
 }
