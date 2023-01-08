@@ -1,5 +1,7 @@
 import React from "react";
 
+/*about */
+
 function AboutHelp() {
   return (
     <section id="information">

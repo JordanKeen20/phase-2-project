@@ -1,20 +1,14 @@
 import React from "react";
 
+function ProjectItem({ name, img, time }) {
 
-
-function ExampleItem({ name, choreImages, time }) {
-  const timeList = time.map((times) => (
-    <span key={times}>{times}</span>
-  ));
-
- return(
-  <div className="chore-items">
-    <h1>{name}</h1>
-    <img src={choreImages} alt= "chore"/>
-    <p>{time}</p>
-    <div className="timings">{timeList}</div>
-  </div>
- )
+  return (
+    <div className="chore-item">
+      <h3>{name}</h3>
+      <img className="sizing" src={img} alt= "chore"></img>
+      <div className="timing">{time}</div>
+    </div>
+  );
 }
 
-export default ExampleItem;
+export default ProjectItem;

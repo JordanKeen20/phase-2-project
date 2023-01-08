@@ -101,3 +101,20 @@ form button {
   padding: 2rem;
   margin: 1rem;
 }
+
+.timing {
+  margin-top: 1rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  display: inline-block;
+  background-color: white;
+  padding: .20rem;
+}
+
+.sizing{
+  margin-top: 1rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  height: 50vh;
+  min-height: 400px;
+}

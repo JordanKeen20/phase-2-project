@@ -1,11 +1,17 @@
 import React from "react";
 import { Switch, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
-import CreateList from "./NewChores";
-import ExampleList from "./ExampleItem";
-import AboutProject from "./AboutHelp";
 import SpecialAid from "./SpecialAid";
+import AboutProject from "./AboutHelp";
+import ExamplesList from "./ExamplesList";
+import ChoreDetails from "./ChoreDetails";
+import NewChores from "./NewChores";
 
+
+
+
+
+/*apps */
 
 
 function App() {
@@ -14,18 +20,21 @@ function App() {
     <>
       <NavBar />
         <Switch>
-          <Route exact path = "/home">
-            <SpecialAid />
-          </Route>
-          <Route exact path= "/createChore">
-            <CreateList />
-          </Route>
-          <Route exact path = "/ChoreList">
-            <ExampleList />
-          </Route>
           <Route exact path = "/HelpfulInformation">
             <AboutProject />
           </Route>
+          <Route exact path = "/ExamplesList">
+            <ExamplesList />
+          </Route>
+          <Route exact path= "/createChore/new"> 
+            <NewChores />
+          </Route>
+          <Route exact path= "/ChoreDetails/:id">
+            <ChoreDetails />
+          </Route>
+          <Route exact path = "/home">
+            <SpecialAid />
+          </Route>       
         </Switch>
     </>
   );
