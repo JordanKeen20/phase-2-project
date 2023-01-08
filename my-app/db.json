@@ -4,15 +4,23 @@
       "id": 1,
       "name": "Wake Up",
       "image": "https://us.123rf.com/450wm/mickallnice/mickallnice1811/mickallnice181100005/112713276-kid-wake-up-in-the-morning-vector-and-illustration-.jpg?ver=6",
-      "time": "08:00 am",
-      "completed": false
+      "time": "08:00 am"
     },
     {
       "id": 2,
       "name": "Make The Bed",
-      "image": "https://thumbs.dreamstime.com/z/vector-illustration-cartoon-little-girl-making-bed-kids-doing-housework-chores-home-concept-201041342.jpg",
-      "time": "08:15 am",
-      "completed": false
+      "image": "https://thumbs.dreamstime.com/z/vector-illustration-cartoon-little-girl-making-bed-kids-doing-housework-chore-home-concept-201041342.jpg",
+      "time": "08:15 am"
+    },
+    {
+      "chores": {
+        "name": "Wash Dishes",
+        "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
+        "time": [
+          "7:00 pm"
+        ]
+      },
+      "id": 3
     }
   ]
 }

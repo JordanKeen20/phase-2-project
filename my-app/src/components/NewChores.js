@@ -5,8 +5,8 @@ import { useHistory } from "react-router-dom";
 const timesOffered = ["7:00 am","8:00 am","9:00 am","10:00 am","11:00 am","12:00 pm","1:00pm", "2:00pm","3:00 pm","4:00 pm","5:00 pm","6:00 pm","7:00 pm",]
 
 function CreateChore() {
-  const [name, setName] = useState("")
-  const [image, setimage] = useState('')
+  const [name, setName] = useState('')
+  const [image, setimage] = useState(null)
   const [time, setTime] = useState([])
   
 
@@ -14,9 +14,10 @@ function CreateChore() {
 
   function handleSubmittion(e) {
     e.preventDefault()
-    const infoData = {
-        list:{name, image, time }
+    const infoData = { 
+        chore: {name, image, time }
     }
+    
     fetch("http://localhost:4000/chores", {
       method: "POST",
       headers: {
@@ -25,8 +26,8 @@ function CreateChore() {
       body: JSON.stringify(infoData)
     })
       .then(response => response.json())
-      .then(data =>{
-        history.push(`/chores/${data.id}`)
+      .then(chores =>{
+        history.push(`http://localhost:4000/chores/${chores.id}`)
       })
   }
 
@@ -55,6 +56,7 @@ function CreateChore() {
     })
 
   return (
+    <>
     <section id='form'>
       <h3> Add new Chore to list </h3>
       <form onSubmit={handleSubmittion}>
@@ -73,6 +75,7 @@ function CreateChore() {
         <button type="submit"> Create </button>
       </form>
     </section>
+    </>
   )
 }
 

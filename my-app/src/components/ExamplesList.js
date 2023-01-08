@@ -1,32 +1,39 @@
+
+
+
+
+
 import React, { useEffect, useState } from "react";
 import ExampleItem from "./ExampleItem";
 
-
-function ExampleList(){
-    const[choresLists, setchoresLists] = useState ([]);
-
+function ExampleList() {
+    const [chore, setChore] = useState([]);
+    
     useEffect(() => {
         fetch("http://localhost:4000/chores")
-            .then(response => response.json())
-            .then(data => setchoresLists(data.chores))
+            .then(r => r.json())
+            .then(chores => 
+                setChore(chores))
     }, [])
-
-    const exampleItems = choresLists.map((choresList) => (
+    
+    const exampleItem = chore.map((chores) => (
         <ExampleItem
-        key={choresList.id}
-        name={choresList.name}
-        choreImages = {choresList.images}
-        time={choresList.time}
-        state of completion = {choresList.completed}
+            key={chores.id}
+            id={chores.id}
+            name={chores.name}
+            img={chores.image}
+            time={chores.time}
         />
     ));
-
-    return(
-        <section id="list">
-            <h2> Chore List </h2>
-            <div id="chore-list">{exampleItems}</div>
+    
+    return (
+        <>
+        <section id="chores">
+            <h2>Chores</h2>
+            <div id="chore-list">{exampleItem}</div>
         </section>
-    )
+        </>
+    );
 }
 
 export default ExampleList;

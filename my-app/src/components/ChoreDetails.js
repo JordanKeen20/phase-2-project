@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
+
 function ChoreDetails(){
 
     const [choreList, setChoreList] = useState(null);
@@ -24,7 +26,7 @@ function ChoreDetails(){
         <section>
             <div className="chore-items">
                 <h1>{name}</h1>
-                <img src= {image} alt="chore picture"/>
+                <img src= {image} alt="some chore"/>
                 <div className="time">{timeListings}</div>
             </div>
         </section>

@@ -1,5 +1,7 @@
 import React from "react";
 
+/* home */
+
 function SpecialAid() {
   return (
     <section id ="specialAid">
