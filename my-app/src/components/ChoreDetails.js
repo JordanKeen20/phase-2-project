@@ -11,7 +11,7 @@ function ChoreDetails(){
     useEffect(() => {
         fetch(`http://localhost:4000/chores/${id}`)
         .then(response => response.json())
-        .then(data => setChoreList(data.chores))
+        .then(data => setChoreList(data.chore))
     }, [id])
 
     if (!choreList) return <h2> wait one moment please...</h2>
@@ -26,8 +26,8 @@ function ChoreDetails(){
         <section>
             <div className="chore-items">
                 <h1>{name}</h1>
-                <img src= {image} alt="some chore"/>
-                <div className="time">{timeListings}</div>
+                <img className="sizing" src= {image} alt="some chore"/>
+                <div className="timing">{timeListings}</div>
             </div>
         </section>
     );
