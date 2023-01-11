@@ -11,36 +11,6 @@
       "name": "Make The Bed",
       "image": "https://thumbs.dreamstime.com/z/vector-illustration-cartoon-little-girl-making-bed-kids-doing-housework-chore-home-concept-201041342.jpg",
       "time": "08:15 am"
-    },
-    {
-      "chores": {
-        "name": "Wash Dishes",
-        "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
-        "time": [
-          "12:00 pm"
-        ]
-      },
-      "id": 3
-    },
-    {
-      "choreInfo": {
-        "name": "Wash Dishes",
-        "image": "https://us.123rf.com/450wm/iimages/iimages1603/iimages160300514/53963544-two-girls-picking-out-clothes-from-closet-illustration.jpg?ver=6",
-        "time": [
-          "12:00 pm"
-        ]
-      },
-      "id": 4
-    },
-    {
-      "choreInfo": {
-        "name": "putting clothing away",
-        "image": "https://www.thespruce.com/thmb/Y9l-tMW1uPAf7BFBglJxxd_PSxw=/2516x2516/smart/filters:no_upscale()/easy-washing-dishes-4174811-hero-617c4e3694d1417b82b2eaaf2db70f5b.jpg",
-        "time": [
-          "8:00 am"
-        ]
-      },
-      "id": 5
     }
   ]
 }
