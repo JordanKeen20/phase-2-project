@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 function ChoreDetails(){
 
     const [choreList, setChoreList] = useState(null);
-    const { id } = useParams()
+    const { id } = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:4000/chores/${id}`)

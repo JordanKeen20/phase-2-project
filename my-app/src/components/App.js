@@ -11,7 +11,7 @@ import NewChores from "./NewChores";
 
 
 
-/*apps */
+
 
 
 function App() {
