@@ -7,22 +7,22 @@ import React, { useEffect, useState } from "react";
 import ExampleItem from "./ExampleItem";
 
 function ExampleList() {
-    const [chore, setChore] = useState([]);
+    const [chores, setChores] = useState([]);
     
     useEffect(() => {
         fetch("http://localhost:4000/chores")
             .then(r => r.json())
-            .then(chores => 
-                setChore(chores))
+            .then(data => 
+                setChores(data))
     }, [])
     
-    const exampleItem = chore.map((chores) => (
+    const exampleItem = chores.map((chore) => (
         <ExampleItem
-            key={chores.id}
-            id={chores.id}
-            name={chores.name}
-            img={chores.image}
-            time={chores.time}
+            key={chore.id}
+            id={chore.id}
+            name={chore.name}
+            img={chore.image}
+            time={chore.time}
         />
     ));
     

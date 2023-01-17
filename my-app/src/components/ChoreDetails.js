@@ -5,18 +5,18 @@ import { useParams } from "react-router-dom";
 
 function ChoreDetails(){
 
-    const [choreList, setChoreList] = useState(null);
+    const [chore, setChore] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:4000/chores/${id}`)
         .then(response => response.json())
-        .then(data => setChoreList(data.chore))
+        .then(data => setChore(data))
     }, [id])
 
-    if (!choreList) return <h2> wait one moment please...</h2>
+    if (!chore) return <h2> wait one moment please...</h2>
 
-    const { name, image, time } = choreList
+    const { name, image, time } = chore
 
     const timeListings = time.map((times) => (
         <span key={times}>{times}</span>

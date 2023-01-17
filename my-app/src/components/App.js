@@ -26,7 +26,7 @@ function App() {
           <Route exact path = "/ExamplesList">
             <ExamplesList />
           </Route>
-          <Route exact path= "/createChore/new"> 
+          <Route exact path= "/CreateChore"> 
             <NewChores />
           </Route>
           <Route exact path= "/ChoreDetails/:id">

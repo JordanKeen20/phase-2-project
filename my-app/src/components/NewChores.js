@@ -14,9 +14,9 @@ function CreateChore() {
 
   function handleSubmittion(e) {
     e.preventDefault()
-    const infoData = { 
-        choreInfo: {name, image, time }
-    }
+    const infoData = 
+       {name, image, time }
+    
     
     fetch("http://localhost:4000/chores", {
       method: "POST",
@@ -27,7 +27,7 @@ function CreateChore() {
     })
       .then(response => response.json())
       .then(data =>{
-        history.push(`http://localhost:4000/chores/${data.choreInfo.id}`)
+        history.push(`ChoreDetails/${data.id}`)
       })
   }
 
