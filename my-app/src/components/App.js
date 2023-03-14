@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
 import SpecialAid from "./SpecialAid";
@@ -16,6 +16,13 @@ import NewChores from "./NewChores";
 
 function App() {
   const [chores, setChores] = useState([]);
+   
+  useEffect(() => {
+    fetch("http://localhost:4000/chores")
+        .then(r => r.json())
+        .then(data => 
+            setChores(data))
+}, [])
 
   return (
     <>
@@ -25,7 +32,7 @@ function App() {
             <AboutProject />
           </Route>
           <Route exact path = "/ExamplesList">
-            <ExamplesList chores ={chores} setChores ={setChores} />
+            <ExamplesList chores ={chores} />
           </Route>
           <Route exact path= "/CreateChore"> 
             <NewChores setChores ={setChores} />

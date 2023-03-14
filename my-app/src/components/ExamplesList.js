@@ -3,17 +3,10 @@
 
 
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ExampleItem from "./ExampleItem";
 
 function ExampleList({chores, setChores }) {
-    
-    useEffect(() => {
-        fetch("http://localhost:4000/chores")
-            .then(r => r.json())
-            .then(data => 
-                setChores(data))
-    }, [])
     
     const exampleItem = chores.map((chore) => (
         <ExampleItem
