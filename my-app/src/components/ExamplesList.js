@@ -6,8 +6,7 @@
 import React, { useEffect, useState } from "react";
 import ExampleItem from "./ExampleItem";
 
-function ExampleList() {
-    const [chores, setChores] = useState([]);
+function ExampleList({chores, setChores }) {
     
     useEffect(() => {
         fetch("http://localhost:4000/chores")

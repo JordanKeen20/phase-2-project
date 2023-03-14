@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
  
 const timesOffered = ["7:00 am","8:00 am","9:00 am","10:00 am","11:00 am","12:00 pm","1:00pm", "2:00pm","3:00 pm","4:00 pm","5:00 pm","6:00 pm","7:00 pm",]
 
-function CreateChore() {
+function CreateChore({ setChores }) {
   const [name, setName] = useState("")
   const [image, setimage] = useState("")
   const [time, setTime] = useState([])
@@ -28,6 +28,7 @@ function CreateChore() {
       .then(response => response.json())
       .then(data =>{
         history.push(`ChoreDetails/${data.id}`)
+        setChores(prevChores=> [...prevChores,data])
       })
   }
 

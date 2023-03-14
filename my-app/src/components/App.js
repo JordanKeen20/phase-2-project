@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
 import SpecialAid from "./SpecialAid";
@@ -15,6 +15,7 @@ import NewChores from "./NewChores";
 
 
 function App() {
+  const [chores, setChores] = useState([]);
 
   return (
     <>
@@ -24,10 +25,10 @@ function App() {
             <AboutProject />
           </Route>
           <Route exact path = "/ExamplesList">
-            <ExamplesList />
+            <ExamplesList chores ={chores} setChores ={setChores} />
           </Route>
           <Route exact path= "/CreateChore"> 
-            <NewChores />
+            <NewChores setChores ={setChores} />
           </Route>
           <Route exact path= "/ChoreDetails/:id">
             <ChoreDetails />
